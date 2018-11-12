@@ -1,0 +1,23 @@
+<?php
+
+$title = 'Delete student';
+$url   = $this->url('student', ['action' => 'delete', 'id' => $Student_ID]);
+
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+
+<p>
+    Are you sure that you want to delete
+    "<?= $this->escapeHtml($student->Student_Name) ?> ( ID:
+    <?= $this->escapeHtml($student->Student_ID) ?>)"
+    ?
+</p>
+
+<form action="<?= $url ?>" method="post">
+    <div class="form-group">
+        <input type="hidden" name="Student_ID" value="<?= (int) $student->Student_ID ?>" />
+        <input type="submit" class="btn btn-danger" name="del" value="Yes" />
+        <input type="submit" class="btn btn-success" name="del" value="No" />
+    </div>
+</form>

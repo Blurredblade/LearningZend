@@ -2,9 +2,10 @@
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/module/Album/src" isTestSource="false" packagePrefix="Album\" />
-      <sourceFolder url="file://$MODULE_DIR$/module/Application/src" isTestSource="false" packagePrefix="Application\" />
+      <sourceFolder url="file://$MODULE_DIR$/module/Student/src" isTestSource="false" packagePrefix="Student\" />
       <sourceFolder url="file://$MODULE_DIR$/module/Application/test" isTestSource="true" packagePrefix="ApplicationTest\" />
+      <sourceFolder url="file://$MODULE_DIR$/module/Application/src" isTestSource="false" packagePrefix="Application\" />
+      <sourceFolder url="file://$MODULE_DIR$/module/Album/src" isTestSource="false" packagePrefix="Album\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/container-interop/container-interop" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/container" />

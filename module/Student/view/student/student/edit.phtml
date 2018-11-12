@@ -1,0 +1,51 @@
+<?php
+$title = 'Edit student';
+$this->headTitle($title);
+?>
+    <h1><?= $this->escapeHtml($title) ?></h1>
+<?php
+$student = $form->get('Student_ID');
+$student->setAttribute('class', 'form-control');
+$student->setAttribute('placeholder', 'ID');
+
+$name = $form->get('Student_Name');
+$name->setAttribute('class', 'form-control');
+$name->setAttribute('placeholder', 'Name');
+
+$gpa = $form->get('GPA');
+$gpa->setAttribute('class', 'form-control');
+$gpa->setAttribute('placeholder', 'GPA');
+
+$submit = $form->get('submit');
+$submit->setAttribute('class', 'btn btn-primary');
+
+$form->setAttribute('action', $this->url('student', [
+    'action' => 'edit',
+    'Student_ID'     => $Student_ID,
+]));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+?>
+    <div class="form-group">
+        <?= $this->formLabel($student) ?>
+        <?= $this->formElement($student) ?>
+        <?= $this->formElementErrors()->render($student, ['class' => 'help-block']) ?>
+    </div>
+
+    <div class="form-group">
+        <?= $this->formLabel($name) ?>
+        <?= $this->formElement($name) ?>
+        <?= $this->formElementErrors()->render($name, ['class' => 'help-block']) ?>
+    </div>
+
+    <div class="form-group">
+        <?= $this->formLabel($gpa) ?>
+        <?= $this->formElement($gpa) ?>
+        <?= $this->formElementErrors()->render($gpa, ['class' => 'help-block']) ?>
+    </div>
+
+<?php
+echo $this->formSubmit($submit);
+echo $this->formHidden($form->get('Student_ID'));
+echo $this->form()->closeTag();

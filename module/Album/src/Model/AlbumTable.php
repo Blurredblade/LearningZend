@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: zacco
- * Date: 10/24/2018
- * Time: 1:10 PM
- */
 
 namespace Album\Model;
 
