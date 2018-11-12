@@ -7,7 +7,7 @@ use Zend\View\View;
 use Student\Model\StudentTable;
 use Student\Form\StudentForm;
 use Student\Model\Student;
-
+use RuntimeException;
 
 class StudentController extends AbstractActionController
 {
@@ -47,7 +47,7 @@ class StudentController extends AbstractActionController
     }
 
     public function editAction(){
-        $Student_ID = (int) $this->params()->fromRoute('id',0);
+        $Student_ID = (int) $this->params()->fromRoute('id');
         try {
             $student = $this->table->getStudent($Student_ID);
         } catch (\Exception $e) {
@@ -78,7 +78,7 @@ class StudentController extends AbstractActionController
     }
 
     public function deleteAction(){
-        $Student_ID = (int) $this->params()->fromRoute('id',0);
+        $Student_ID = (int) $this->params()->fromRoute('id');
         if (!$Student_ID) {
             return $this->redirect()->toRoute('student');
         }
@@ -88,7 +88,7 @@ class StudentController extends AbstractActionController
             $del = $request->getPost('del', 'No');
 
             if ($del == 'Yes') {
-                $Student_ID = (int) $request->getPost('id');
+                $Student_ID = (int) $request->getPost('Student_ID');
                 $this->table->deleteStudent($Student_ID);
             }
 

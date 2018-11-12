@@ -21,12 +21,6 @@ class StudentTable
         $Student_ID = (int) $Student_ID;
         $rowset = $this->tableGateway->select(['Student_ID' => $Student_ID]);
         $row = $rowset->current();
-        if(!$row){
-            throw new RuntimeException(sprintf(
-                'Could not find row with identifier %d',
-                $Student_ID
-            ));
-        }
         return $row;
     }
 
@@ -39,7 +33,7 @@ class StudentTable
 
         $Student_ID = (int) $student->Student_ID;
 
-        if(!$this->getStudent($Student_ID)){
+        if($this->getStudent($Student_ID) == 0){
             $this->tableGateway->insert($data);
         }
 
