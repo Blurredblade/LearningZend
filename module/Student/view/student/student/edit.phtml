@@ -4,10 +4,6 @@ $this->headTitle($title);
 ?>
     <h1><?= $this->escapeHtml($title) ?></h1>
 <?php
-$student = $form->get('Student_ID');
-$student->setAttribute('class', 'form-control');
-$student->setAttribute('placeholder', 'ID');
-
 $name = $form->get('Student_Name');
 $name->setAttribute('class', 'form-control');
 $name->setAttribute('placeholder', 'Name');
@@ -27,12 +23,6 @@ $form->prepare();
 
 echo $this->form()->openTag($form);
 ?>
-    <div class="form-group">
-        <?= $this->formLabel($student) ?>
-        <?= $this->formElement($student) ?>
-        <?= $this->formElementErrors()->render($student, ['class' => 'help-block']) ?>
-    </div>
-
     <div class="form-group">
         <?= $this->formLabel($name) ?>
         <?= $this->formElement($name) ?>
